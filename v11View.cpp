@@ -33,14 +33,16 @@ END_MESSAGE_MAP()
 
 // Cv11View construction/destruction
 
-Cv11View::Cv11View() {}
-
-Cv11View::~Cv11View()
+Cv11View::Cv11View()
 {
 	color = RGB(0, 0, 0);
 	shape = 0;
 	lastColor = RGB(0, 0, 0);
 	lastShape = 0;
+}
+
+Cv11View::~Cv11View()
+{
 }
 
 BOOL Cv11View::PreCreateWindow(CREATESTRUCT& cs)
@@ -80,8 +82,6 @@ void Cv11View::OnLButtonDown(UINT nFlags, CPoint point)
 		rc = tracker.m_rect;
 		Invalidate();
 	}
-
-	CView::OnLButtonDown(nFlags, point);
 }
 
 void Cv11View::OnShape()
